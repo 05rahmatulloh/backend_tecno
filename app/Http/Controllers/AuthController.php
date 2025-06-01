@@ -256,10 +256,7 @@ return response()->json(['message' => 'Email salah'], 404);
 
 
 
-// $updated = User::where('email', $resetToken->email)->update([
-// 'password' => Hash::make($request->password),
-// 'email_verified_at' => now(),
-// ]);
+
 
 $affected = DB::table('users')
 ->where('email', $resetToken->email)
