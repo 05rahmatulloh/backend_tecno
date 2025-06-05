@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
       'no_kamar' => 'required|string|max:10',
       'link_ktmm' => 'nullable|url|max:2048',
-      'no_hp' => 'required|string|max:15',
+      'no_hp' => 'required|string|max:15|unique:data_mahasiswa,no_hp',
       ]);
 
       if ($validator->fails()) {
